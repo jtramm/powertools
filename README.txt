@@ -45,9 +45,13 @@ automatically start/stop power collection in sync with the program timing.
 When measuring on GPU, the CUDA Device ID must be given as the first argument.
 This ID can be determined using the nvidia-smi command (though 0 is a safe bet).
 
+When measuring on CPU, the scripts will require sudo access, though note that
+you should not run the wrapper with sudo as it will get called within the
+script.
+
 CPU (requires sudo access):
 	sudo rapl
-	sudo rapl_wrapper <commands ...>
+	rapl_wrapper <commands ...>
 GPU:
 	gpu_power_monitor <CUDA device ID>
 	gpu_power_wrapper <CUDA device ID> <commands ...>
